@@ -3,27 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projections</title>
+    <title>James Mulligan: Homework 2, World Projections</title>
 </head>
 <body>
-    <h1>In this project I learned how to display images in different projections</h1>
+    <h1>In Homework 2 I used QGIS to diplay different projections of the world</h1>
     
-    <h2 style="color:red">Describe in your own words how you displayed the map in different projections using QGIS</h2>
-    <p>You can write a paragraph here</p>
+    <h2 style="color:red"></h2>
+    <p>The projections that I used are: WGS 84, World Aitoff, Pseudo Mercator, Sphere Winkel, World Cylindrical: Equal Area, World Equidistant Conic, North Pole Azimuthal Equidistant, Wolrd Van der Grinten, and the World from Space</p>
     
     <h2>WGS84 Projection</h2>
-    <h3>Some observations</h3>
-    <a href=".//maps/4326.png">
-    <img src=".//maps/4326.png" alt="WGS84" width='500px'>
+    <h3>This projection appears to distort the poles to a large degree in attempting to create a uniform grid of parallels and meridians.</h3>
+    <a href="./maps/4326_WGS84.png">
+    <img src="./maps/4326_WGS84.png" alt="WGS84" width='500px'>
     </a>
     <h2>Aitoff Projection</h2>
-    <h3>Some observations</h3>
-    <a href=".//maps/54043.png">
-    <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
+    <h3>This one has less distortian than many others by not adhering to a strick grid, however, both area and shape are distorted moving away from (0,0)</h3>
+    <a href="./maps/54043_WorldAitoff.png">
+    <img src="./maps/54043_WorldAitoff.png" alt="Aitoff" width='500px'>
     </a>
-    <h2 style="color:red">Now, you should <u>add the following projections on your own:</u></h2>
-    <h3>EPSG: 3857, 53018, 54034, 54027, 102016, and two additional projections that you choose.</h3>
-    <p></p>
+    <h2>Pseudo Mercator Projection</h2>
+    <h3>This projection perserves the shape of the world, however, that is at the expenseof extreme distortion towards the poles, as well as incredibly inacurate sizes.</h3>
+    <a href="./maps/3857_PseudoMercator.png">
+    <img src="./maps/3857_PseudoMercator.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2>Sphere Winkel Projection</h2>
+    <h3>The projection appears to be a compromise between size and shape, with distortion in both, but not to an extreme degree, the distortion appears to get worse moving away from (0,0)</h3>
+    <a href="./maps/53018_SphereWinkelI.png">
+    <img src="./maps/53018_SphereWinkelI.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2>World Cylindrical: Equal Area Projection</h2>
+    <h3>This projection focuses on accurate area at the cost of extreme horizontal stretching towards the poles</h3>
+    <a href="./maps/54034_WorldCylindricalEqualArea.png">
+    <img src="./maps/54034_WorldCylindricalEqualArea.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2>World Equidistant Conic Projection</h2>
+    <h3>This map experiences distortion moving away from the North Pole, with massive horizontal stretching towards the south pole, not accurate in either size nor shape</h3>
+    <a href="./maps/54027_WorldEquidistantConic.png">
+    <img src="./maps/54027_WorldEquidistantConic.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2>North Pole Azimuthal Equidistant Projection</h2>
+    <h3>This one looks similar to the World Equidistant Conic Projection, however it is more accurate regarding distance and direction from the North Pole.</h3>
+    <a href="./maps/1012016_NorthPoleAzimuthalEquidistant.png">
+    <img src="./maps/1012016_NorthPoleAzimuthalEquidistant.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2>Van der Grinten Projection</h2>
+    <h3>This projection appears to be attempting to compromise between shape and area, similar to the Aistoff Projction, while also making the spherical nature of the world more obvious</h3>
+    <a href="./maps/54029_WorldVanderGrintenI.png">
+    <img src="./maps/54029_WorldVanderGrintenI.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2>The World from Space Projection</h2>
+    <h3>This one represents what the world looks like from space, while accurate in both shape and size, its large failing is that it does not represent the entirety of the earth's surface and so cannot be used for the entire world</h3>
+    <a href="./maps/54043_WorldAitoff.png">
+    <img src="./maps/54043_WorldAitoff.png" alt="Aitoff" width='500px'>
+    </a>
     <h2>Data used for this project</h2>
     <a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip"> Download Natrual Earth 1:10m Cultural Vector </a>
 </body>

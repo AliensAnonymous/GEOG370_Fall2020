@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Preview</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <script src = "./LeafletData/clocktower.geojson"></script>
+  <script src = "./LeafletData/lighthousePoint.geojson"></script>
+  <script src = "./LeafletData/yachtHarbor.geojson"></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+  </style>
+
+
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+      var map = L.map('map').setView([36.961995308143756, -122.01200053871145], 14.0);
+
+      var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map)
+     
+      var AerialImage = L.tileLayer('./Tiles/{z}/{x}/{y}.png', {
+        minZoom: 12,
+        maxZoom: 16,
+        tms: false,
+        attribution: 'USGS'
+      })
+      
+      var clocktowerIcon = L.icon({ // notice the L.icon which is a Leaflet object with properties
+      iconUrl: 'https://static.thenounproject.com/png/614167-200.png',
+      // this points to a jpg image obtained from the internet
+      iconSize: [40,40], // size of the icon
+      popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
+      });
+
+      var clocktowerPopup = "Santa Cruz Clocktower<br/><img src='https://i.pinimg.com/originals/fc/01/be/fc01be1e71c35c38e694e3c02d7ce92d.jpg'width='100px'/>";
+      var tower = L.geoJSON(scclocktower, { // a
+      pointToLayer: function (feature, latlng) { // b
+      return L.marker(latlng, {icon: clocktowerIcon});}}) // c
+      .bindPopup(clocktowerPopup);
+      
+
+
+
+      var lighthouseIcon = L.icon({ // notice the L.icon which is a Leaflet object with properties
+      iconUrl: 'https://www.iconfinder.com/data/icons/island-2/50/72-512.png',
+      // this points to a jpg image obtained from the internet
+      iconSize: [40,40], // size of the icon
+      popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
+      });
+
+      var lighthousePopup = "Lighthouse Point<br/><img src='https://2.bp.blogspot.com/-T5BVAMllr0U/UY2is4EbEcI/AAAAAAAAMxw/v-73H2M089s/s1600/SantaCruz10.jpg'width='100px'/>";
+      var light = L.geoJSON(lighthouse, { // a
+      pointToLayer: function (feature, latlng) { // b
+      return L.marker(latlng, {icon: lighthouseIcon});}}) // c
+      .bindPopup(lighthousePopup);
+     
+
+
+      var harborIcon = L.icon({ // notice the L.icon which is a Leaflet object with properties
+      iconUrl: 'https://static.thenounproject.com/png/866962-200.png',
+      // this points to a jpg image obtained from the internet
+      iconSize: [40,40], // size of the icon
+      popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
+      });
+
+      var harborPopup = "Lighthouse Point<br/><img src='https://www.santacruzharbor.org/wp-content/uploads/2018/01/imageHarborEntrance.jpg'width='100px'/>";
+      var harb = L.geoJSON(harbor, { // a
+      pointToLayer: function (feature, latlng) { // b
+      return L.marker(latlng, {icon: harborIcon});}}) // c
+      .bindPopup(harborPopup);
+
+
+      var maps = {
+        "Open Street Map": OSM,
+        "1971 Aerial Image": AerialImage,
+      }
+
+      var locations = {
+        "Clocktower": tower,
+        "Lighthouse Point": light,
+        "Yacht Harbor": harb
+      }
+
+
+      
+
+      L.control.layers(maps,locations).addTo(map)
+      
+
+
+      
+
+
+  </script>
+</body>
+</html>

@@ -33,7 +33,7 @@
   <script>
       var map = L.map('map').setView([36.961995308143756, -122.01200053871145], 14.0);
 
-      var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map)
+      var OSM = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {}).addTo(map)
      
       var AerialImage = L.tileLayer('./Tiles/{z}/{x}/{y}.png', {
         minZoom: 12,
@@ -80,7 +80,7 @@
       popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
       });
 
-      var harborPopup = "Lighthouse Point<br/><img src='https://www.santacruzharbor.org/wp-content/uploads/2018/01/imageHarborEntrance.jpg'width='100px'/>";
+      var harborPopup = "Yacht Harbor<br/><img src='https://www.santacruzharbor.org/wp-content/uploads/2018/01/imageHarborEntrance.jpg'width='100px'/>";
       var harb = L.geoJSON(harbor, { // a
       pointToLayer: function (feature, latlng) { // b
       return L.marker(latlng, {icon: harborIcon});}}) // c

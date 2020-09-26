@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Mulligan: Homework 8, Choropleth Ratios Project</title>
+</head>
+<body>
+    <h1>James Mulligan: Homework 8, Choropleth Ratios Project </h1>   
+    
+    
+    <h2>Choropleth Using the UTM 10 North comparing Male and Female Unemployment with Natural Breaks</h2>
+    <a href="./Natural Breaks.png">
+    <img src="./Natural Breaks.png" alt="WGS84" width='1000px'>
+    </a>
+    <br>
+    <h4>I chose to compare unemployment rates for Men and Women in California and present this as a unitless number. The natural breaks mode of displaying this data is by the far best for this data set because the data is highly clustered with some outliers. Most other modes of grouping group the majority of counties all into one category with only a few outliers, offering little informative information.
+
+    </h4>
+
+    <br>
+    <br>
+    <h2>Choropleth Using the UTM 10 North comparing Male and Female Unemployment with Equal Counts (Quantiles)</h2>
+    <a href="./Equal Count.png">
+    <img src="./Equal Count.png" alt="WGS84" width='1000px'>
+    </a>
+    <br>
+    <h4>The equal count mode of grouping the data is not ideal for the dataset because it groups counties with extremely different unemployment ratios together due to large spread. This makes it visually impossible to disitinguish between some counties with moderate ratios and those with extremelty high or low ratios.
+
+    </h4>
+
+    <br>
+    <br>
+    <h2>Choropleth Using the UTM 10 North comparing Male and Female Unemployment with Equal Intervals</h2>
+    <a href="./EqualIntervals.png">
+    <img src="./EqualIntervals.png" alt="WGS84" width='1000px'>
+    </a>
+    <br>
+    <h4> The equal intervals is better than the equal counts mode of displaying the data for this data set but not by much. Because there are relatively large outliers, the intervals are rather large, so while it does give a better representation of the actual values for counties, it is impossible to distinguish between many counties with similar ratios because they all fit into an overly large grouping. It would have been possible to add more groupings to add granularity, however to do so would necessitate at least twice as many groups as there are currently.
+
+    </h4>
+
+    <br>
+    <br>
+    <h2>Data used for this project:</h2>
+    <a href="./ca-county-boundaries/CA_Counties/CA_Counties_TIGER2016.shp" download> Shapefile of California Counties </a>
+    <br>
+    <a href="./Census Data/EditedCensusData_2.csv" download> Cleaned Census Data </a>
+</body>
+</html>

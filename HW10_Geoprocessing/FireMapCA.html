@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Mulligan: Homework 9, Choropleth Project 3</title>
+</head>
+<body>
+    <h1>James Mulligan: Homework 10, GeoProcessing</h1>   
+    
+    
+    
+    <a href="./MapImg.png">
+    <img src="./MapImg.png" alt="WGS84" width='1000px'>
+    </a>
+    <br>
+    <h4> I have focused recently on the fires taking place in California, previously I have looked at the subject using air quality as a metric, this time I used the number of confirmed reports as the metric for fire frequency and severity due to both being correlated with the number of reports from what I have seen. The first operation that I performed was to clip the point layer data which represented the individual points accross the entire US because I was only interested in those occuring in CA. Afterwards, I performed an intersection on the remaining points to see which reports were affiliated with witch counties in order to scale the counties according to the number of reports. I did not think that a scale was particularly useful in this case because the raw number of reports was added for each county making it easy to understand the scale being used.
+
+    </h4>
+
+    <br>
+    <h2>Starting data used for this project:</h2>
+    <a href="./ca-county-boundaries(1)/CA_Counties/CA_Counties_TIGER2016.shp" download> Shapefile of California Counties </a>
+    <br>
+    <a href="./modis_fire_2020_293_conus_shapefile/modis_fire_2020_293_conus.shp" download> Shapefile for Fire Reports accross the US (2020) </a> 
+    <br>
+    <a href="https://data.ca.gov/dataset/ca-geographic-boundaries">Original Data Source for Counties Shapefile</a> 
+    <br>
+    <a href="https://fsapps.nwcg.gov/afm/gisdata.php">Original Data Source for Fire Data Shapefile</a> 
+    <br>
+    <h2>Data created during project:</h2>
+    <a href="./Data/ClippedFile/ClippedFile.shp" download> Data after being Clipped </a> 
+    <br>
+    <a href="./Data/IntersectionFile/IntersectionFile.shp" download> Data after being Intersected</a> 
+    <br>
+    
+</body>
+</html>
